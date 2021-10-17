@@ -1,0 +1,31 @@
+{
+  "name": "destroytheuniverse",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "11.5.0",
+    "@emotion/styled": "11.3.0",
+    "@mui/material": "5.0.4",
+    "deep-equal": "2.0.5",
+    "next": "11.1.2",
+    "promise.allsettled": "1.0.5",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.30",
+    "@types/deep-equal": "1.0.1",
+    "@types/promise.allsettled": "1.0.3",
+    "@types/uuid": "8.3.1",
+    "eslint": "8.0.1",
+    "eslint-config-next": "11.1.2",
+    "typescript": "4.4.4"
+  }
+}
