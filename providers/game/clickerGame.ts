@@ -1,6 +1,7 @@
 import {Bank} from "./bank";
 import {Upgrades} from "./upgrades";
 import {ClickerGameDefinitions, UpgradeItem} from "../../types/clickertypes";
+import React from "react";
 
 type Dependency<TType extends abstract new (...args: any) => any> = {
 	new(...args: ConstructorParameters<TType>): InstanceType<TType>;
@@ -21,9 +22,9 @@ interface ClickerParams
 export class ClickerGame
 {
 	private constructor(
-		private readonly definitions: ClickerGameDefinitions,
-		private readonly bank: Bank,
-		private readonly upgrades: Upgrades
+		public readonly definitions: ClickerGameDefinitions,
+		public readonly bank: Bank,
+		public readonly upgrades: Upgrades
 	)
 	{
 	}
@@ -41,3 +42,5 @@ export class ClickerGame
 		);
 	}
 }
+
+export const ClickerGameContext = React.createContext<ClickerGame | undefined>(undefined);

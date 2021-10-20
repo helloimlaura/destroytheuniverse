@@ -6,10 +6,9 @@ export interface UpgradeItem
 
 export interface UpgradeDisplay
 {
-	label: string;
-	iconUrl: string;
-	smallImageUrl: string;
-	largeImageUrl: string;
+	// iconUrl: string;
+	// smallImageUrl: string;
+	// largeImageUrl: string;
 }
 
 export interface ClickerGameDefinitions

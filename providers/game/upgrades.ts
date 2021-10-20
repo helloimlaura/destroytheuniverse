@@ -3,6 +3,7 @@ import {UpgradeItem} from "../../types/clickertypes";
 import {Bank} from "./bank";
 
 type Status = Record<string, UpgradeStatus>;
+export type UpgradeDefinitions = Record<string, UpgradeItem>;
 
 export interface UpgradesPayload
 {
@@ -10,7 +11,7 @@ export interface UpgradesPayload
 	currentDps: bigint;
 }
 
-interface UpgradeStatus
+export interface UpgradeStatus
 {
 	index: number;
 	level: number;
@@ -26,7 +27,7 @@ export class Upgrades extends DataStore<UpgradesPayload>
 	private nextLevelCosts: Record<string, bigint> = {};
 
 	constructor(
-		private readonly upgradeDefinitions: Record<string, UpgradeItem>,
+		private readonly upgradeDefinitions: UpgradeDefinitions,
 		private readonly bank: Bank
 	)
 	{
@@ -45,7 +46,7 @@ export class Upgrades extends DataStore<UpgradesPayload>
 
 			if (this.bank.state.savings < cost)
 			{
-				throw new Error(`You can't afford to upgrade ${this.upgradeDefinitions[upgradeId].display.label} (Cost: ${cost}).`)
+				throw new Error(`You can't afford to upgrade ${upgradeId} (Cost: ${cost}).`)
 			}
 
 			this.bank.actions.subtract(cost);
